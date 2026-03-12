@@ -216,3 +216,52 @@ class MentorshipObservationAI:
                 "cultural_respect": "ai_learns_to_work_with_not_against_cultural_practices"
             }
         }
+
+
+
+PRECISION_CORRECTION = {
+    
+    "current_framework_assumes": """
+    Observable mentorship categories:
+    visual learners, auditory learners,
+    kinesthetic learners, analytical learners.
+    
+    That taxonomy is from 1970s learning styles research.
+    It's been largely debunked as discrete categories.
+    Most people use multiple modalities
+    depending on domain and context.
+    """,
+    
+    "better_framing": """
+    Don't observe: what TYPE of learner is this?
+    Observe: what MODALITY does this knowledge
+    naturally want to travel through?
+    
+    Passive cooling knowledge wants to travel
+    through demonstration and physical presence.
+    Not because the learner is kinesthetic.
+    Because the knowledge IS physical.
+    
+    Naming ceremony knowledge wants to travel
+    through seasonal presence and relationship.
+    Not because learner is auditory.
+    Because the knowledge IS relational-temporal.
+    
+    The knowledge type determines
+    the transmission modality.
+    Not the learner type.
+    """,
+    
+    "implication_for_observation_AI": """
+    Watch: what modality does the mentor
+    naturally reach for with THIS knowledge?
+    
+    Not: what modality does this learner prefer?
+    
+    The master already knows how the knowledge
+    wants to travel. The AI learns that.
+    Then replicates the transmission pathway.
+    Not the learning style.
+    """
+}
+

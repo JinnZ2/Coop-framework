@@ -16,6 +16,7 @@ Run:  python3 coop_sim.py
       python3 coop_sim.py --extended    (all extensions enabled)
 """
 
+import csv
 import random
 import sys
 
@@ -333,6 +334,89 @@ class CoopNetwork:
             bar = "#" * filled + "." * (max_bar - filled)
             print(f"  t={snap['tick']:>3} [{bar}] {snap['adoption_pct']}%")
 
+        # Regional adoption over time
+        self._print_region_chart()
+
+        # Co-op type breakdown
+        self._print_type_breakdown()
+
+    def _print_region_chart(self):
+        """Show adoption percentage by region over time as a sparkline-style chart."""
+        regions = sorted(set(c.region for c in self.coops))
+        if not regions:
+            return
+
+        # Build per-region adoption history
+        region_history = {r: [] for r in regions}
+        for snap_idx, snap in enumerate(self.history):
+            tick = snap["tick"]
+            for region in regions:
+                region_coops = [c for c in self.coops if c.region == region]
+                if not region_coops:
+                    region_history[region].append(0)
+                    continue
+                # Count adopted at this tick (adopted and adoption_tick <= tick and not dropped before tick)
+                adopted = sum(1 for c in region_coops
+                              if c.adopted and c.adoption_tick is not None and c.adoption_tick <= tick)
+                # Also count those who dropped but after this tick
+                dropped_later = sum(1 for c in region_coops
+                                    if not c.adopted and c.adoption_tick is not None
+                                    and c.adoption_tick <= tick
+                                    and (c.dropped_tick is None or c.dropped_tick > tick))
+                pct = round(100 * (adopted + dropped_later) / len(region_coops))
+                region_history[region].append(pct)
+
+        print("\nAdoption by region:")
+        blocks = " ░▒▓█"
+        for region in regions:
+            vals = region_history[region]
+            # Compact: show every 3rd tick for readability
+            step = max(1, len(vals) // 20)
+            sampled = vals[::step]
+            sparkline = ""
+            for v in sampled:
+                idx = min(int(v / 25), len(blocks) - 1)
+                sparkline += blocks[idx]
+            final_pct = vals[-1] if vals else 0
+            print(f"  {region:<12} {sparkline} {final_pct:>3}%")
+        print(f"  {'':12} {'legend: ░<25% ▒<50% ▓<75% █≥75%'}")
+
+    def _print_type_breakdown(self):
+        """Show final adoption stats broken down by co-op type."""
+        types = {}
+        for c in self.coops:
+            types.setdefault(c.coop_type, {"total": 0, "adopted": 0})
+            types[c.coop_type]["total"] += 1
+            if c.adopted:
+                types[c.coop_type]["adopted"] += 1
+
+        print("\nAdoption by co-op type:")
+        for ctype in sorted(types):
+            t = types[ctype]
+            label = Coop.TYPES[ctype]["label"]
+            pct = round(100 * t["adopted"] / t["total"]) if t["total"] > 0 else 0
+            bar_len = t["adopted"]
+            bar = "█" * bar_len + "░" * (t["total"] - bar_len)
+            print(f"  {label:<16} [{bar}] {t['adopted']}/{t['total']} ({pct}%)")
+
+    def export_csv(self, filepath):
+        """Export simulation history to CSV file."""
+        if not self.history:
+            print("No simulation data to export.")
+            return
+
+        fields = ["tick", "total_coops", "adopted", "adoption_pct",
+                  "new_adoptions", "new_coops", "resource_transfers",
+                  "avg_resources", "bridges_formed", "decayed"]
+
+        with open(filepath, "w", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=fields)
+            writer.writeheader()
+            for snap in self.history:
+                writer.writerow({k: snap.get(k, 0) for k in fields})
+
+        print(f"\nExported {len(self.history)} ticks to {filepath}")
+
     def _print_resource_hubs(self):
         """Show top givers and receivers — the network's multiplier nodes."""
         givers = sorted(self.coops, key=lambda c: c.resources_given, reverse=True)
@@ -352,7 +436,7 @@ class CoopNetwork:
             print(f"    {c.name:<12} {label:<16} received {c.resources_received:>4} units")
 
 
-def run(ticks=30, network_size=30, seeds=2, seed=42, extensions=None):
+def run(ticks=30, network_size=30, seeds=2, seed=42, extensions=None, csv_path=None):
     """Run the full simulation."""
     ext_label = ""
     if extensions and any(extensions.values()):
@@ -378,6 +462,10 @@ def run(ticks=30, network_size=30, seeds=2, seed=42, extensions=None):
             net.print_status()
 
     net.print_summary()
+
+    if csv_path:
+        net.export_csv(csv_path)
+
     return net
 
 
@@ -388,4 +476,14 @@ if __name__ == "__main__":
         "adoption_decay": extended,
         "type_affinity": extended,
     }
-    run(extensions=extensions)
+
+    csv_path = None
+    if "--csv" in sys.argv:
+        csv_idx = sys.argv.index("--csv")
+        if csv_idx + 1 < len(sys.argv):
+            csv_path = sys.argv[csv_idx + 1]
+        else:
+            print("Error: --csv requires a filename argument")
+            sys.exit(1)
+
+    run(extensions=extensions, csv_path=csv_path)

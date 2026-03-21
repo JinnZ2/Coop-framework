@@ -9,7 +9,9 @@ This is a **documentation and template repository**, not a traditional software 
 ## Repository Structure
 
 ```
-├── README.md                      # Project description (minimal)
+├── README.md                      # Project description with usage guide and file links
+├── GETTING_STARTED.md             # Step-by-step guide for non-technical first-time users
+├── template-index.md              # Complete catalog of all templates with descriptions
 ├── LICENSE                        # CC0 1.0 Universal (public domain)
 ├── Co-op-map.md                   # Strategic framework: co-op networks by region, type, trust propagation
 ├── trust-first.md                 # Philosophical positioning document
@@ -17,6 +19,10 @@ This is a **documentation and template repository**, not a traditional software 
 ├── Montessori-plugin.md           # 6 Claude templates for Montessori schools
 ├── grain-elevator-coop.md         # 5 Claude templates for grain elevator operations
 ├── auto-repair-shop-plugin.md     # Claude templates for auto repair shop operations
+├── credit-union-plugin.md         # 6 Claude templates for credit union operations
+├── housing-coop-plugin.md         # 6 Claude templates for housing co-op operations
+├── worker-owned-plugin.md         # 6 Claude templates for worker-owned business operations
+├── coop_sim.py                    # Runnable co-op network simulation with CSV export
 ├── democratic-ai-education.py     # Pseudo-code educational AI transition framework
 └── mentorship-learning-ai.py      # Pseudo-code AI mentorship/observation system
 ```

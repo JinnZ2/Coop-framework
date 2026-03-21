@@ -29,6 +29,86 @@ Adjust quantities: up 15% for spring demand.
 Format each as a ready-to-send email with subject line, itemized list, and requested delivery date of March 15, 2026.
 
 
+What Claude produces (example output):
+
+---
+
+**Email 1**
+
+**Subject:** March 2026 Purchase Order — Viroqua Food Co-op
+
+Hi Harmony Valley team,
+
+Here's our order for March delivery. We've adjusted quantities up 15% for spring demand.
+
+| Item | Quantity |
+|---|---|
+| Mixed greens | 46 cases |
+| Root vegetables | 23 cases |
+| Seasonal fruit | 17 cases |
+
+**Requested delivery date:** March 15, 2026
+**Delivery address:** 609 N Main St, Viroqua, WI 54665
+
+Please confirm availability and let us know if any substitutions are needed. Thanks as always for the great product.
+
+Best,
+[Your name]
+Viroqua Food Co-op
+
+---
+
+**Email 2**
+
+**Subject:** March 2026 Purchase Order — Viroqua Food Co-op
+
+Hi Driftless Provisions,
+
+March order below, adjusted up 15% for spring:
+
+| Item | Quantity |
+|---|---|
+| Cheddar | 230 lbs |
+| Gouda | 115 lbs |
+| Butter | 58 lbs |
+
+**Requested delivery date:** March 15, 2026
+
+Let me know if any items need a longer lead time. Thanks!
+
+Best,
+[Your name]
+Viroqua Food Co-op
+
+---
+
+**Email 3**
+
+**Subject:** March 2026 Purchase Order — Viroqua Food Co-op
+
+Hi North Country Bakery,
+
+Here's our March order with 15% seasonal increase:
+
+| Item | Quantity |
+|---|---|
+| Sourdough loaves | 69 |
+| Whole wheat loaves | 46 |
+| Rolls | 35 dozen |
+
+**Requested delivery date:** March 15, 2026
+
+Looking forward to it. The sourdough has been flying off the shelves.
+
+Best,
+[Your name]
+Viroqua Food Co-op
+
+---
+
+*You can then ask follow-ups like "add a note to Harmony Valley about switching to spring greens" or "make the tone more casual."*
+
+
 2. Board Meeting Minutes Processor
 
 Here are my raw notes from last night's board meeting. Clean them up into formal
@@ -140,6 +220,39 @@ inventory = {
 # 3. Draft the reorder emails for anything urgent
 # 4. Flag seasonal adjustments I should consider for [current month]
 # 5. Calculate if I'm overordering anything based on usage patterns
+
+
+What Claude produces (example output):
+
+---
+
+**URGENT — Reorder Now:**
+
+| Item | Current | Min Threshold | Weekly Usage | Days Until Stockout |
+|---|---|---|---|---|
+| Butter | 12 lbs | 20 lbs | 25 lbs/week | **3 days** |
+| Mixed greens | 8 cases | 15 cases | 20 cases/week | **2.8 days** |
+| Sourdough | 18 loaves | 25 loaves | 30 loaves/week | **4.2 days** |
+
+**Action needed:** Butter and mixed greens are below minimum threshold RIGHT NOW. Sourdough will be below threshold by tomorrow.
+
+**Reorder within 3 days:**
+- Butter — contact Organic Valley today (3-day lead time means you'll hit zero before delivery if you wait)
+- Mixed greens — contact Harmony Valley today (2-day lead time, cutting it close)
+- Sourdough — contact North Country Bakery tomorrow at latest (1-day lead time)
+
+**You're fine on:**
+- Whole milk: 45 gallons, ~5.25 days of supply, above threshold
+- Cheddar: 55 lbs, ~11 days of supply, well above threshold
+- Root vegetables: 22 cases, ~13 days of supply, comfortable
+
+**Draft reorder email for Organic Valley:**
+
+Subject: Urgent Reorder — Butter — Viroqua Food Co-op
+
+Hi Organic Valley team, we need to reorder butter as soon as possible...
+
+---
 
 
 7. Member Newsletter Generator

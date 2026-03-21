@@ -44,6 +44,15 @@ All files live at the root level. No subdirectories.
 - **Python identifiers**: snake_case for variables/functions, PascalCase for classes
 - **Template names**: descriptive of the specific use case they address
 
+## Running the Simulation
+
+```bash
+python3 coop_sim.py              # base simulation (trust, growth, resources)
+python3 coop_sim.py --extended   # all extensions enabled
+```
+
+No dependencies required — stdlib only (`random`, `math`, `sys`).
+
 ## No Build/Test/Lint Commands
 
 This project has no:

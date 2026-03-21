@@ -6,11 +6,19 @@ Models three interconnected dynamics:
   2. Network growth — new co-ops form and connect over time
   3. Resource distribution — co-ops share surplus resources along trust links
 
+Extensions (togglable):
+  4. Bridge events — conferences that create cross-region connections
+  5. Adoption decay — co-ops that see no network value may drop Claude
+  6. Type affinity — same-type co-ops form stronger trust bonds
+  7. Resource hub report — identifies most generous and most helped co-ops
+
 Run:  python3 coop_sim.py
+      python3 coop_sim.py --extended    (all extensions enabled)
 """
 
 import random
 import math
+import sys
 
 
 class Coop:
@@ -24,6 +32,15 @@ class Coop:
         "worker": {"trust_rate": 0.18, "resource_cap": 80, "label": "Worker Co-op"},
     }
 
+    # Type affinity: pairs that trust each other more (supply chain proximity)
+    TYPE_AFFINITY = {
+        frozenset({"food", "grain"}): 1.4,
+        frozenset({"food", "worker"}): 1.3,
+        frozenset({"grain", "electric"}): 1.2,
+        frozenset({"electric", "credit"}): 1.1,
+        frozenset({"worker", "credit"}): 1.2,
+    }
+
     def __init__(self, name, coop_type, region):
         spec = self.TYPES[coop_type]
         self.name = name
@@ -34,7 +51,17 @@ class Coop:
         self.resources = random.randint(20, spec["resource_cap"])
         self.adopted = False
         self.adoption_tick = None
+        self.dropped_tick = None
         self.connections = []  # list of (other_coop, trust_strength)
+        self.resources_given = 0
+        self.resources_received = 0
+
+    @classmethod
+    def affinity(cls, type_a, type_b):
+        """Return trust multiplier for two co-op types."""
+        if type_a == type_b:
+            return 1.5  # same type = strongest affinity
+        return cls.TYPE_AFFINITY.get(frozenset({type_a, type_b}), 1.0)
 
     def __repr__(self):
         status = "ADOPTED" if self.adopted else "pending"
@@ -46,12 +73,20 @@ class CoopNetwork:
 
     REGIONS = ["Minnesota", "Wisconsin", "Vermont", "Oregon", "Appalachia", "Dakotas"]
 
-    def __init__(self, seed=42):
+    def __init__(self, seed=42, extensions=None):
         self.rng = random.Random(seed)
         self.tick = 0
         self.coops = []
         self.history = []
         self._name_counter = 0
+        # Extensions: toggle optional dynamics
+        self.ext = {
+            "bridge_events": False,
+            "adoption_decay": False,
+            "type_affinity": False,
+        }
+        if extensions:
+            self.ext.update(extensions)
 
     # --- Setup ---
 
@@ -69,6 +104,8 @@ class CoopNetwork:
             candidates.sort(key=lambda c: (0 if c.region == coop.region else 1, self.rng.random()))
             for partner in candidates[:n_connections]:
                 trust = round(self.rng.uniform(0.1, 0.6), 2)
+                if self.ext["type_affinity"]:
+                    trust = round(min(trust * Coop.affinity(coop.coop_type, partner.coop_type), 0.95), 2)
                 coop.connections.append((partner, trust))
                 partner.connections.append((coop, trust))
 
@@ -82,12 +119,14 @@ class CoopNetwork:
     # --- Simulation Steps ---
 
     def step(self):
-        """Advance one tick: propagate trust, grow network, distribute resources."""
+        """Advance one tick: propagate trust, grow network, distribute resources, extensions."""
         self.tick += 1
+        bridge = self._bridge_event() if self.ext["bridge_events"] else []
         adoptions = self._propagate_trust()
+        decayed = self._adoption_decay() if self.ext["adoption_decay"] else []
         new_coops = self._grow_network()
         transfers = self._distribute_resources()
-        snapshot = self._snapshot(adoptions, new_coops, transfers)
+        snapshot = self._snapshot(adoptions, new_coops, transfers, bridge, decayed)
         self.history.append(snapshot)
         return snapshot
 
@@ -99,9 +138,10 @@ class CoopNetwork:
             for partner, trust in coop.connections:
                 if partner.adopted:
                     continue
-                # Probability = trust_strength * partner's trust_rate * network_effect
+                # Probability = trust_strength * partner's trust_rate * network_effect * affinity
                 network_bonus = 1 + 0.05 * sum(1 for c, _ in partner.connections if c.adopted)
-                prob = trust * partner.trust_rate * network_bonus
+                affinity = Coop.affinity(coop.coop_type, partner.coop_type) if self.ext["type_affinity"] else 1.0
+                prob = trust * partner.trust_rate * network_bonus * affinity
                 if self.rng.random() < prob:
                     partner.adopted = True
                     partner.adoption_tick = self.tick
@@ -140,9 +180,67 @@ class CoopNetwork:
                     amount = int(coop.resources * trust * 0.1)
                     if amount > 0:
                         coop.resources -= amount
+                        coop.resources_given += amount
                         partner.resources = min(partner.resources + amount, partner.resource_cap)
+                        partner.resources_received += amount
                         transfers.append((coop.name, partner.name, amount))
         return transfers
+
+    # --- Extensions ---
+
+    def _bridge_event(self):
+        """Simulate a conference/gathering that creates cross-region connections."""
+        bridges = []
+        # ~15% chance each tick of a regional conference
+        if self.rng.random() > 0.15:
+            return bridges
+        # Pick 2 random regions to connect
+        if len(self.REGIONS) < 2:
+            return bridges
+        r1, r2 = self.rng.sample(self.REGIONS, 2)
+        pool1 = [c for c in self.coops if c.region == r1 and c.adopted]
+        pool2 = [c for c in self.coops if c.region == r2]
+        if not pool1 or not pool2:
+            return bridges
+        # 1-3 new cross-region connections form
+        n_bridges = self.rng.randint(1, min(3, len(pool1), len(pool2)))
+        for _ in range(n_bridges):
+            a = self.rng.choice(pool1)
+            b = self.rng.choice(pool2)
+            # Skip if already connected
+            if any(c is b for c, _ in a.connections):
+                continue
+            trust = round(self.rng.uniform(0.15, 0.4), 2)
+            if self.ext["type_affinity"]:
+                trust = round(min(trust * Coop.affinity(a.coop_type, b.coop_type), 0.95), 2)
+            a.connections.append((b, trust))
+            b.connections.append((a, trust))
+            bridges.append((a.name, b.name, a.region, b.region))
+        return bridges
+
+    def _adoption_decay(self):
+        """Co-ops that see no adopted neighbors may drop Claude."""
+        decayed = []
+        for coop in self.coops:
+            if not coop.adopted or coop.adoption_tick == self.tick:
+                continue
+            # How many ticks since adoption?
+            tenure = self.tick - coop.adoption_tick
+            if tenure < 5:
+                continue  # grace period
+            adopted_neighbors = sum(1 for c, _ in coop.connections if c.adopted)
+            total_neighbors = len(coop.connections)
+            if total_neighbors == 0:
+                isolation = 1.0
+            else:
+                isolation = 1 - (adopted_neighbors / total_neighbors)
+            # Decay chance: high isolation + long tenure = more likely to drop
+            decay_prob = isolation * 0.03
+            if self.rng.random() < decay_prob:
+                coop.adopted = False
+                coop.dropped_tick = self.tick
+                decayed.append(coop)
+        return decayed
 
     # --- Helpers ---
 
@@ -153,7 +251,7 @@ class CoopNetwork:
         self.coops.append(coop)
         return coop
 
-    def _snapshot(self, adoptions, new_coops, transfers):
+    def _snapshot(self, adoptions, new_coops, transfers, bridges=None, decayed=None):
         total = len(self.coops)
         adopted = sum(1 for c in self.coops if c.adopted)
         avg_resources = sum(c.resources for c in self.coops) / max(total, 1)
@@ -166,6 +264,8 @@ class CoopNetwork:
             "new_coops": len(new_coops),
             "resource_transfers": len(transfers),
             "avg_resources": round(avg_resources, 1),
+            "bridges_formed": len(bridges) if bridges else 0,
+            "decayed": len(decayed) if decayed else 0,
         }
 
     # --- Reporting ---
@@ -186,6 +286,15 @@ class CoopNetwork:
             bar_len = r["adopted"]
             bar = "#" * bar_len + "." * (r["total"] - bar_len)
             print(f"  {region:<12} [{bar}] {r['adopted']}/{r['total']}")
+        if self.history:
+            snap = self.history[-1]
+            notes = []
+            if snap.get("bridges_formed"):
+                notes.append(f"{snap['bridges_formed']} bridge link(s)")
+            if snap.get("decayed"):
+                notes.append(f"{snap['decayed']} dropout(s)")
+            if notes:
+                print(f"  >> {', '.join(notes)}")
 
     def print_summary(self):
         print("\n" + "=" * 60)
@@ -202,6 +311,16 @@ class CoopNetwork:
             ticks = [c.adoption_tick for c in self.coops if c.adopted and c.adoption_tick is not None]
             print(f"  Adoption spread:  tick {min(ticks)} to tick {max(ticks)}")
 
+        total_bridges = sum(s["bridges_formed"] for s in self.history)
+        total_decayed = sum(s["decayed"] for s in self.history)
+        if total_bridges:
+            print(f"  Bridge events:    {total_bridges} cross-region links formed")
+        if total_decayed:
+            print(f"  Adoption decay:   {total_decayed} co-ops dropped out")
+
+        # Resource hub report
+        self._print_resource_hubs()
+
         # Adoption curve
         print("\nAdoption curve:")
         max_bar = 40
@@ -210,13 +329,39 @@ class CoopNetwork:
             bar = "#" * filled + "." * (max_bar - filled)
             print(f"  t={snap['tick']:>3} [{bar}] {snap['adoption_pct']}%")
 
+    def _print_resource_hubs(self):
+        """Show top givers and receivers — the network's multiplier nodes."""
+        givers = sorted(self.coops, key=lambda c: c.resources_given, reverse=True)
+        receivers = sorted(self.coops, key=lambda c: c.resources_received, reverse=True)
+        top_givers = [c for c in givers[:5] if c.resources_given > 0]
+        top_receivers = [c for c in receivers[:5] if c.resources_received > 0]
+        if not top_givers:
+            return
+        print("\nResource hubs (multiplier nodes):")
+        print("  Most generous:")
+        for c in top_givers:
+            label = Coop.TYPES[c.coop_type]["label"]
+            print(f"    {c.name:<12} {label:<16} gave {c.resources_given:>4} units")
+        print("  Most supported:")
+        for c in top_receivers:
+            label = Coop.TYPES[c.coop_type]["label"]
+            print(f"    {c.name:<12} {label:<16} received {c.resources_received:>4} units")
 
-def run(ticks=30, network_size=30, seeds=2, seed=42):
+
+def run(ticks=30, network_size=30, seeds=2, seed=42, extensions=None):
     """Run the full simulation."""
-    print("Coop-framework Network Simulation")
-    print(f"  {network_size} co-ops, {seeds} initial adopters, {ticks} ticks\n")
+    ext_label = ""
+    if extensions and any(extensions.values()):
+        enabled = [k for k, v in extensions.items() if v]
+        ext_label = f"  extensions: {', '.join(enabled)}\n"
 
-    net = CoopNetwork(seed=seed)
+    print("Coop-framework Network Simulation")
+    print(f"  {network_size} co-ops, {seeds} initial adopters, {ticks} ticks")
+    if ext_label:
+        print(ext_label, end="")
+    print()
+
+    net = CoopNetwork(seed=seed, extensions=extensions)
     net.generate_network(network_size)
     net.seed_adoption(seeds)
 
@@ -225,7 +370,7 @@ def run(ticks=30, network_size=30, seeds=2, seed=42):
     for _ in range(ticks):
         net.step()
         snap = net.history[-1]
-        if snap["new_adoptions"] > 0 or snap["new_coops"] > 0:
+        if snap["new_adoptions"] > 0 or snap["new_coops"] > 0 or snap["bridges_formed"] > 0 or snap["decayed"] > 0:
             net.print_status()
 
     net.print_summary()
@@ -233,4 +378,10 @@ def run(ticks=30, network_size=30, seeds=2, seed=42):
 
 
 if __name__ == "__main__":
-    run()
+    extended = "--extended" in sys.argv
+    extensions = {
+        "bridge_events": extended,
+        "adoption_decay": extended,
+        "type_affinity": extended,
+    }
+    run(extensions=extensions)

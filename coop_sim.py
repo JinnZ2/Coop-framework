@@ -17,7 +17,6 @@ Run:  python3 coop_sim.py
 """
 
 import random
-import math
 import sys
 
 
@@ -41,14 +40,15 @@ class Coop:
         frozenset({"worker", "credit"}): 1.2,
     }
 
-    def __init__(self, name, coop_type, region):
+    def __init__(self, name, coop_type, region, rng=None):
         spec = self.TYPES[coop_type]
         self.name = name
         self.coop_type = coop_type
         self.region = region
         self.trust_rate = spec["trust_rate"]
         self.resource_cap = spec["resource_cap"]
-        self.resources = random.randint(20, spec["resource_cap"])
+        rng = rng or random
+        self.resources = rng.randint(20, spec["resource_cap"])
         self.adopted = False
         self.adoption_tick = None
         self.dropped_tick = None
@@ -100,8 +100,9 @@ class CoopNetwork:
         for coop in self.coops:
             n_connections = self.rng.randint(1, 4)
             candidates = [c for c in self.coops if c is not coop and c not in [x[0] for x in coop.connections]]
-            # prefer same-region connections
-            candidates.sort(key=lambda c: (0 if c.region == coop.region else 1, self.rng.random()))
+            # prefer same-region connections, randomize within region groups
+            tiebreakers = {id(c): self.rng.random() for c in candidates}
+            candidates.sort(key=lambda c: (0 if c.region == coop.region else 1, tiebreakers[id(c)]))
             for partner in candidates[:n_connections]:
                 trust = round(self.rng.uniform(0.1, 0.6), 2)
                 if self.ext["type_affinity"]:
@@ -171,14 +172,17 @@ class CoopNetwork:
     def _distribute_resources(self):
         """Co-ops share surplus resources along trust links."""
         transfers = []
+        # Snapshot budgets so giving order doesn't create bias
+        budgets = {id(c): c.resources for c in self.coops}
         for coop in self.coops:
-            if coop.resources <= coop.resource_cap * 0.3:
+            budget = budgets[id(coop)]
+            if budget <= coop.resource_cap * 0.3:
                 continue  # nothing to spare
             for partner, trust in coop.connections:
                 if partner.resources < partner.resource_cap * 0.4:
-                    # Share proportional to trust
-                    amount = int(coop.resources * trust * 0.1)
-                    if amount > 0:
+                    # Share proportional to trust, based on start-of-tick budget
+                    amount = int(budget * trust * 0.1)
+                    if amount > 0 and coop.resources >= amount:
                         coop.resources -= amount
                         coop.resources_given += amount
                         partner.resources = min(partner.resources + amount, partner.resource_cap)
@@ -247,7 +251,7 @@ class CoopNetwork:
     def _spawn_coop(self, coop_type, region):
         self._name_counter += 1
         name = f"{region[:3].upper()}-{coop_type[:2].upper()}{self._name_counter:03d}"
-        coop = Coop(name, coop_type, region)
+        coop = Coop(name, coop_type, region, rng=self.rng)
         self.coops.append(coop)
         return coop
 

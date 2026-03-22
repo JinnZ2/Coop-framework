@@ -23,6 +23,9 @@ This is a **documentation and template repository**, not a traditional software 
 ├── housing-coop-plugin.md         # 6 Claude templates for housing co-op operations
 ├── rural-electric-coop-plugin.md   # 6 Claude templates for rural electric co-op operations
 ├── tribal-enterprise-plugin.md    # 6 Claude templates for tribal enterprise operations
+├── fishing-coop-plugin.md         # 6 Claude templates for fishing co-op operations
+├── childcare-coop-plugin.md       # 6 Claude templates for childcare co-op operations
+├── farmworker-coop-plugin.md      # 6 Claude templates for farmworker co-op operations
 ├── worker-owned-plugin.md         # 6 Claude templates for worker-owned business operations
 ├── coop_sim.py                    # Runnable co-op network simulation with CSV export
 ├── democratic-ai-education.py     # Pseudo-code educational AI transition framework

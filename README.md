@@ -10,6 +10,9 @@ Co-ops already run on trust, shared ownership, and word-of-mouth. This framework
 - **Grain elevator** operators tracking harvest intake, basis pricing, and rail logistics
 - **Rural electric co-op** staff managing outages, load forecasting, vegetation management, and rate design
 - **Tribal enterprise** leaders balancing sovereignty, federal grants, community impact, and economic development
+- **Fishing co-op** crews tracking catch, quota, cold chain logistics, and direct-to-consumer sales
+- **Childcare co-op** parents managing enrollment, volunteer schedules, licensing, and budgets
+- **Farmworker co-op** members coordinating crews, contracts, housing, and worker rights
 - **Credit union** teams handling loan documents, compliance, and community outreach
 - **Housing co-op** boards managing maintenance, bylaws, and new member onboarding
 - **Worker-owned businesses** coordinating democratic decisions, profit-sharing, and scheduling
@@ -48,6 +51,15 @@ Templates for job tracking, estimates, parts management, and customer communicat
 
 ### Tribal Enterprises — [tribal-enterprise-plugin.md](tribal-enterprise-plugin.md)
 6 templates for sovereignty-aligned business planning, federal grants & contracts, community impact tracking, cultural tourism, infrastructure/broadband development, and inter-tribal partnerships.
+
+### Fishing Co-ops — [fishing-coop-plugin.md](fishing-coop-plugin.md)
+6 templates for catch tracking, direct-to-consumer sales, cold chain management, fleet coordination, regulatory compliance, and member settlement.
+
+### Childcare Co-ops — [childcare-coop-plugin.md](childcare-coop-plugin.md)
+6 templates for enrollment management, parent scheduling, budget modeling, licensing compliance, staff retention, and fundraising.
+
+### Farmworker Co-ops — [farmworker-coop-plugin.md](farmworker-coop-plugin.md)
+6 templates for crew scheduling, contract negotiation, payroll administration, housing coordination, workforce training, and cooperative governance.
 
 ### Credit Unions — [credit-union-plugin.md](credit-union-plugin.md)
 6 templates for loan document analysis, member communication, financial health dashboards, compliance prep, community development, and board reporting.

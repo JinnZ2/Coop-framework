@@ -100,6 +100,39 @@ Every copy-paste Claude template in this repository, organized by industry. Clic
 | 5 | Infrastructure & Broadband Development | Broadband project planning, tribal ISP business models, funding source mapping |
 | 6 | Inter-Tribal & Co-op Network Partnerships | Partnership mapping, joint purchasing, inter-tribal economic networks |
 
+## Fishing Co-ops — [fishing-coop-plugin.md](fishing-coop-plugin.md)
+
+| # | Template | What It Does |
+|---|---|---|
+| 1 | Catch Tracking & Quota Management | Monitors daily landings, quota burn rate, processing backlog, cold storage |
+| 2 | Direct-to-Consumer & Market Sales | Tracks wholesale vs DTC channels, CSA shares, restaurant accounts, pricing |
+| 3 | Cold Chain & Processing Logistics | Manages offload scheduling, plant throughput, freezer capacity, quality control |
+| 4 | Vessel Maintenance & Fleet Coordination | Fleet maintenance tracking, fuel cost modeling, safety compliance, season planning |
+| 5 | Regulatory Compliance & Sustainability | Permit tracking, observer programs, MSC certification, reporting calendars |
+| 6 | Member Settlement & Revenue Distribution | Settlement calculations, price pooling, per-vessel statements, reserve planning |
+
+## Childcare Co-ops — [childcare-coop-plugin.md](childcare-coop-plugin.md)
+
+| # | Template | What It Does |
+|---|---|---|
+| 1 | Enrollment & Waitlist Management | Projects openings, models expansion, tracks subsidy gaps, parent participation |
+| 2 | Parent Scheduling & Volunteer Coordination | Volunteer scheduling, shift fairness, parent communication, new family orientation |
+| 3 | Budget & Tuition Modeling | Financial modeling, reserve building, tuition scenarios, grant identification |
+| 4 | Licensing & Health/Safety Compliance | Staff credentials, inspection prep, drill logs, CACFP compliance |
+| 5 | Staff Retention & Professional Development | Compensation analysis, career pathways, retention strategies, recruitment |
+| 6 | Fundraising & Community Support | Annual fundraising plans, grant applications, employer partnerships, appeal letters |
+
+## Farmworker Co-ops — [farmworker-coop-plugin.md](farmworker-coop-plugin.md)
+
+| # | Template | What It Does |
+|---|---|---|
+| 1 | Crew Scheduling & Job Dispatch | Crew assignments, transportation logistics, contract staffing, fair rotation |
+| 2 | Contract Negotiation & Rate Setting | Rate analysis, prevailing wage comparison, contract templates, grower scorecards |
+| 3 | Payroll & Benefits Administration | Weekly payroll, piece rate compliance, tax withholding, benefits modeling |
+| 4 | Housing & Transportation Coordination | Housing inspections, transport routing, emergency preparedness, rights summaries |
+| 5 | Training & Workforce Development | Required training tracking, skill certifications, CDL pipeline, leadership development |
+| 6 | Member Rights & Cooperative Governance | Bilingual bylaws, rights handbooks, democratic decision-making, conflict resolution |
+
 ## Worker-Owned Businesses — [worker-owned-plugin.md](worker-owned-plugin.md)
 
 | # | Template | What It Does |
@@ -113,6 +146,6 @@ Every copy-paste Claude template in this repository, organized by industry. Clic
 
 ---
 
-**Total: 60+ ready-to-use templates across 10 industries.**
+**Total: 80+ ready-to-use templates across 13 industries.**
 
 Don't see your industry? Follow the pattern of any existing plugin file and create your own. Then share it.

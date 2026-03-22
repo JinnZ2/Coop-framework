@@ -21,6 +21,8 @@ This is a **documentation and template repository**, not a traditional software 
 ├── auto-repair-shop-plugin.md     # Claude templates for auto repair shop operations
 ├── credit-union-plugin.md         # 6 Claude templates for credit union operations
 ├── housing-coop-plugin.md         # 6 Claude templates for housing co-op operations
+├── rural-electric-coop-plugin.md   # 6 Claude templates for rural electric co-op operations
+├── tribal-enterprise-plugin.md    # 6 Claude templates for tribal enterprise operations
 ├── worker-owned-plugin.md         # 6 Claude templates for worker-owned business operations
 ├── coop_sim.py                    # Runnable co-op network simulation with CSV export
 ├── democratic-ai-education.py     # Pseudo-code educational AI transition framework

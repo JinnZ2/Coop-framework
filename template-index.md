@@ -78,6 +78,28 @@ Every copy-paste Claude template in this repository, organized by industry. Clic
 | 5 | New Member Onboarding | Welcome packets, house rules, move-in checklists, equity share explanations |
 | 6 | Conflict Resolution & Governance | Complaint templates, mediation processes, voting guides, bylaw amendments |
 
+## Rural Electric Co-ops — [rural-electric-coop-plugin.md](rural-electric-coop-plugin.md)
+
+| # | Template | What It Does |
+|---|---|---|
+| 1 | Outage Management & Restoration Tracker | Prioritizes restoration by impact, dispatches crews, drafts member notifications |
+| 2 | Load Forecasting & Demand Management | Models peak demand, analyzes wholesale costs, ranks demand response programs |
+| 3 | Right-of-Way & Vegetation Management | Plans trimming rotations, tracks budgets, manages member access issues |
+| 4 | Capital Credits & Member Equity | Models retirement schedules, tracks equity ratios, drafts member notices |
+| 5 | Rate Design & Cost-of-Service | Designs rate structures, models bill impacts, drafts increase communications |
+| 6 | Renewable Energy & Distributed Generation | Tracks solar interconnections, analyzes cost shifts, plans EV infrastructure |
+
+## Tribal Enterprises — [tribal-enterprise-plugin.md](tribal-enterprise-plugin.md)
+
+| # | Template | What It Does |
+|---|---|---|
+| 1 | Sovereignty-Aligned Business Planning | Strategic plans, TERO compliance, dual governance reporting |
+| 2 | Federal Grant & Contract Navigation | 8(a) tracking, grant reporting calendars, Buy Indian Act compliance |
+| 3 | Community Impact & Benefit Tracking | Employment metrics, community investment dashboards, economic multipliers |
+| 4 | Cultural Tourism & Land-Based Enterprise | Cultural boundary frameworks, visitor experience design, feasibility studies |
+| 5 | Infrastructure & Broadband Development | Broadband project planning, tribal ISP business models, funding source mapping |
+| 6 | Inter-Tribal & Co-op Network Partnerships | Partnership mapping, joint purchasing, inter-tribal economic networks |
+
 ## Worker-Owned Businesses — [worker-owned-plugin.md](worker-owned-plugin.md)
 
 | # | Template | What It Does |
@@ -91,6 +113,6 @@ Every copy-paste Claude template in this repository, organized by industry. Clic
 
 ---
 
-**Total: 50+ ready-to-use templates across 8 industries.**
+**Total: 60+ ready-to-use templates across 10 industries.**
 
 Don't see your industry? Follow the pattern of any existing plugin file and create your own. Then share it.

@@ -8,7 +8,8 @@ Co-ops already run on trust, shared ownership, and word-of-mouth. This framework
 
 - **Food co-op** managers juggling vendors, inventory, and member newsletters
 - **Grain elevator** operators tracking harvest intake, basis pricing, and rail logistics
-- **Rural electric co-op** staff managing outages, load forecasting, and rate communication
+- **Rural electric co-op** staff managing outages, load forecasting, vegetation management, and rate design
+- **Tribal enterprise** leaders balancing sovereignty, federal grants, community impact, and economic development
 - **Credit union** teams handling loan documents, compliance, and community outreach
 - **Housing co-op** boards managing maintenance, bylaws, and new member onboarding
 - **Worker-owned businesses** coordinating democratic decisions, profit-sharing, and scheduling
@@ -41,6 +42,12 @@ No app to install. No coding. No training required. See [GETTING_STARTED.md](GET
 
 ### Auto Repair Shops — [auto-repair-shop-plugin.md](auto-repair-shop-plugin.md)
 Templates for job tracking, estimates, parts management, and customer communication.
+
+### Rural Electric Co-ops — [rural-electric-coop-plugin.md](rural-electric-coop-plugin.md)
+6 templates for outage management, load forecasting, vegetation management, capital credits, rate design, and renewable energy/distributed generation.
+
+### Tribal Enterprises — [tribal-enterprise-plugin.md](tribal-enterprise-plugin.md)
+6 templates for sovereignty-aligned business planning, federal grants & contracts, community impact tracking, cultural tourism, infrastructure/broadband development, and inter-tribal partnerships.
 
 ### Credit Unions — [credit-union-plugin.md](credit-union-plugin.md)
 6 templates for loan document analysis, member communication, financial health dashboards, compliance prep, community development, and board reporting.

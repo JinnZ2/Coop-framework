@@ -1,8 +1,10 @@
-Claude for Co-ops: Practical Code Plug-ins
-How to Use These
+# Claude for Co-ops: Practical Code Plug-ins
+## How to Use These
 These are prompts and lightweight scripts you can paste directly into Claude. No coding experience needed. Just copy, paste, and modify the parts in [brackets] with your own information.
 
-1. Vendor Order Generator
+## General Co-op Plug-ins
+
+### 1. Vendor Order Generator
 Paste this into Claude:
 
 I run a food co-op. Here are my vendors and what we typically order monthly:
@@ -15,7 +17,6 @@ Generate individual purchase order emails for each vendor for this month.
 Adjust quantities: [up 10% for seasonal demand / down 15% because of surplus / keep same].
 Format each as a ready-to-send email with subject line, itemized list, and requested delivery date of [date].
 
-
 Example filled in:
 
 I run a food co-op. Here are my vendors and what we typically order monthly:
@@ -27,7 +28,6 @@ North Country Bakery: 60 loaves sourdough, 40 loaves whole wheat, 30 dozen rolls
 Generate individual purchase order emails for each vendor for this month.
 Adjust quantities: up 15% for spring demand.
 Format each as a ready-to-send email with subject line, itemized list, and requested delivery date of March 15, 2026.
-
 
 What Claude produces (example output):
 
@@ -108,8 +108,7 @@ Viroqua Food Co-op
 
 *You can then ask follow-ups like "add a note to Harmony Valley about switching to spring greens" or "make the tone more casual."*
 
-
-2. Board Meeting Minutes Processor
+### 2. Board Meeting Minutes Processor
 
 Here are my raw notes from last night's board meeting. Clean them up into formal
 minutes with the following sections:
@@ -124,10 +123,10 @@ minutes with the following sections:
 Raw notes:
 [Paste your handwritten or rough notes here]
 
-
-3. Seasonal Delivery Route Optimizer
+### 3. Seasonal Delivery Route Optimizer
 Paste into Claude with your actual stops:
 
+```python
 # Co-op Delivery Route Planner
 # Paste this into Claude and replace with your actual delivery data
 
@@ -148,9 +147,9 @@ deliveries = {
 # 2. Flag any delivery window conflicts
 # 3. Estimate fuel cost at [current diesel price] per gallon
 # 4. Suggest what to do if a stop falls through
+```
 
-
-4. Grant Application Builder
+### 4. Grant Application Builder
 
 Help me write a USDA Rural Development grant application.
 
@@ -178,8 +177,7 @@ Write the full narrative section addressing:
 
 Use plain language. No jargon. These are real people doing real work.
 
-
-5. Supplier Contract Analyzer
+### 5. Supplier Contract Analyzer
 
 I'm going to paste a supplier contract below. Analyze it and give me:
 
@@ -193,9 +191,9 @@ I'm going to paste a supplier contract below. Analyze it and give me:
 Contract text:
 [Paste contract here]
 
+### 6. Inventory Tracker & Reorder Alert System
 
-6. Inventory Tracker & Reorder Alert System
-
+```python
 # Co-op Inventory Monitor
 # Update these numbers weekly, paste into Claude for analysis
 
@@ -220,7 +218,7 @@ inventory = {
 # 3. Draft the reorder emails for anything urgent
 # 4. Flag seasonal adjustments I should consider for [current month]
 # 5. Calculate if I'm overordering anything based on usage patterns
-
+```
 
 What Claude produces (example output):
 
@@ -254,8 +252,7 @@ Hi Organic Valley team, we need to reorder butter as soon as possible...
 
 ---
 
-
-7. Member Newsletter Generator
+### 7. Member Newsletter Generator
 
 Write our monthly co-op newsletter.
 
@@ -273,9 +270,9 @@ Tone: Warm, neighborly, like you're talking to someone at the counter.
 Length: One page, printable. Many of our members don't use email.
 Include a small section for: volunteer opportunities, upcoming dates, contact info.
 
+### 8. Diesel & Operating Cost Modeler
 
-8. Diesel & Operating Cost Modeler
-
+```python
 # Co-op Operating Cost Monitor
 # Plug in your real numbers
 
@@ -300,9 +297,9 @@ operations = {
 # 3. Which route is least cost-efficient per stop?
 # 4. Where could I consolidate deliveries to save fuel?
 # 5. At what diesel price does [route name] stop being viable?
+```
 
-
-9. Community Event Planner
+### 9. Community Event Planner
 
 Help me plan a [type of event: farmers market / seed swap / co-op fair / community workshop].
 
@@ -322,8 +319,7 @@ Generate:
 5. Supply list with quantities
 6. Contingency plan for weather/low turnout
 
-
-10. Knowledge Preservation Template
+### 10. Knowledge Preservation Template
 
 Our [role: operations manager / head farmer / founding member] is 
 [retiring / reducing hours / moving on] after [X] years.
@@ -350,9 +346,9 @@ Format as a manual with:
 - Seasonal calendar of critical tasks
 - "If this breaks, do this" troubleshooting guide
 
+### 11. Price Comparison & Margin Calculator
 
-11. Price Comparison & Margin Calculator
-
+```python
 # Compare supplier pricing across co-op network
 # Use this to negotiate better rates or find alternatives
 
@@ -386,7 +382,7 @@ our_monthly_volume = {
 # 2. Break-even point where the cheaper per-unit price beats the delivery fee
 # 3. What markup do we need at retail to maintain [target margin %]?
 # 4. If we increase volume by 20%, who gives us a better deal?
-
+```
 
 How to Use Any of These
 	1.	Go to claude.ai
@@ -399,10 +395,8 @@ No app to install. No training required. No data leaves your conversation.
 
 Built for co-ops. Built to be shared. Pass it on.
 
-
-
-Electrical Co-op Plug-ins
-1. Outage Response Coordinator
+## Electrical Co-op Plug-ins
+### 1. Outage Response Coordinator
 
 We're a rural electric co-op serving [number] members across [counties].
 We just got reports of outages in these areas:
@@ -424,9 +418,9 @@ Help me:
 5. Flag any safety concerns given current weather
 6. Build a timeline for my board report
 
+### 2. Load Forecasting & Peak Management
 
-2. Load Forecasting & Peak Management
-
+```python
 # Rural Electric Co-op Load Planner
 # Replace with your actual meter and weather data
 
@@ -475,10 +469,11 @@ wholesale_rate = {
 # 4. Model a 10% increase in agricultural load — do we need substation upgrades?
 # 5. Draft a member notice about voluntary load reduction during peak events
 # 6. Compare cost of peak shaving battery vs demand response program
+```
 
+### 3. Line Maintenance Scheduler
 
-3. Line Maintenance Scheduler
-
+```python
 # Preventive Maintenance Tracker
 # Update quarterly, paste into Claude for analysis
 
@@ -514,11 +509,13 @@ line_segments = {
         "critical_facilities_served": ["La Farge elementary"]
     }
 }
+```
 
 annual_maintenance_budget = 180000
 crew_day_rate = 2800  # fully loaded cost per crew per day
 tree_trimming_cost_per_mile = 3500
 
+```python
 # Ask Claude:
 # 1. Rank segments by failure risk (age + outage frequency + tree rating)
 # 2. Build a 12-month maintenance calendar that fits the budget
@@ -526,9 +523,9 @@ tree_trimming_cost_per_mile = 3500
 # 4. Draft a right-of-way clearing notice for affected landowners
 # 5. Project when segment C needs full rebuild vs continued maintenance
 # 6. What's our liability exposure on segments serving critical facilities?
+```
 
-
-4. Member Rate Communication
+### 4. Member Rate Communication
 
 We need to raise residential rates by [X]% effective [date].
 
@@ -553,9 +550,9 @@ Include:
 - Available assistance programs for hardship cases
 - How to attend the board meeting to voice concerns
 
+### 5. Solar & Distributed Generation Manager
 
-5. Solar & Distributed Generation Manager
-
+```python
 # Community Solar & Net Metering Tracker
 
 member_solar = {
@@ -582,3 +579,4 @@ member_solar = {
 # 4. Model revenue impact if net metering policy changes to avoided cost rate
 # 5. Which time of day does member solar reduce our wholesale peak purchases most?
 # 6. Build a one-page handout for members asking about solar: costs, savings, process
+```

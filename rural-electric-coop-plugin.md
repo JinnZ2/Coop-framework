@@ -1,6 +1,8 @@
-Rural Electric Co-op Plug-ins
-1. Outage Management & Restoration Tracker
+# Rural Electric Co-op Plug-ins
 
+## 1. Outage Management & Restoration Tracker
+
+```python
 # Rural Electric Co-op Outage Dashboard
 # Update during storm events, paste into Claude
 
@@ -60,10 +62,11 @@ outage_event = {
 # 5. Estimate restoration timeline by area — when can we tell members to expect power back?
 # 6. Draft member notifications: automated phone/text for affected areas with estimated restoration times
 # 7. After event: compile an outage report for the board with total cost, member-hours without power, and lessons learned
+```
 
+## 2. Load Forecasting & Demand Management
 
-2. Load Forecasting & Demand Management
-
+```python
 # Rural Electric Load Analysis
 # Update monthly, paste into Claude for trend analysis
 
@@ -126,10 +129,11 @@ wholesale_rate_structure = {
 # 5. Rank our demand response programs by cost-effectiveness ($/kW avoided)
 # 6. Build a one-page load forecast summary for the board showing 3-year trends and projections
 # 7. Identify the top 10 commercial accounts driving our peak — would time-of-use rates help?
+```
 
+## 3. Right-of-Way & Vegetation Management
 
-3. Right-of-Way & Vegetation Management
-
+```python
 # Vegetation Management Planner
 # Update annually, paste into Claude
 
@@ -165,10 +169,11 @@ vegetation_program = {
 # 5. Build a 4-year rotation map: which miles get trimmed which year to stay on cycle
 # 6. Compare contractor rates — at what volume does it make sense to add a second in-house crew?
 # 7. Draft an RFP for tree trimming services for next year's program
+```
 
+## 4. Capital Credits & Member Equity
 
-4. Capital Credits & Member Equity
-
+```python
 # Capital Credits Tracker
 # Update annually before retirement decisions, paste into Claude
 
@@ -221,10 +226,11 @@ capital_credits = {
 # 6. Estate retirements are $145K — is that trending up? What should we budget for next year?
 # 7. Build a one-page explainer for new members: "What are capital credits and why do they matter?"
 # 8. Compare our rotation cycle to peer co-ops — are we retiring fast enough to keep members engaged?
+```
 
+## 5. Rate Design & Cost-of-Service
 
-5. Rate Design & Cost-of-Service
-
+```python
 # Rate Study Worksheet
 # Paste into Claude when preparing for rate cases
 
@@ -284,10 +290,11 @@ rate_data = {
 # 6. Compare our rates to neighboring co-ops and IOUs — where do we stand?
 # 7. Should we add a demand charge for residential? Model the impact on high-use vs low-use members
 # 8. Draft FAQ answers for the top 10 questions members will ask about a rate increase
+```
 
+## 6. Renewable Energy & Distributed Generation
 
-6. Renewable Energy & Distributed Generation
-
+```python
 # Distributed Generation Tracker
 # Update quarterly, paste into Claude
 
@@ -341,8 +348,9 @@ distributed_generation = {
 # 6. Model the grid impact of 200 EVs in our territory — do we need infrastructure upgrades?
 # 7. Compare our net metering policy to neighboring utilities — are we competitive?
 # 8. Draft a board memo on our distributed generation strategy for the next 5 years
+```
 
-
+```text
 How to Use Any of These
 1. Go to claude.ai
 2. Copy any template above
@@ -354,3 +362,4 @@ How to Use Any of These
 No app to install. No training required. No data leaves your conversation.
 
 Built for rural electric co-ops. Built to be shared. Pass it on.
+```

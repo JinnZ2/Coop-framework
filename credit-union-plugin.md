@@ -1,6 +1,8 @@
-Credit Union Co-op Plug-ins
-1. Loan Document Summarizer
+# Credit Union Co-op Plug-ins
 
+## 1. Loan Document Summarizer
+
+```python
 # Credit Union Loan Agreement Analyzer
 # Paste any loan agreement into Claude alongside this template
 
@@ -26,10 +28,11 @@ loan_context = {
 # 4. Compare the rate and terms to our current market rates above — is this competitive?
 # 5. Identify anything that conflicts with our credit union's member-first philosophy
 # 6. Draft a one-page "Loan Summary Sheet" we can hand the member with key terms, payment schedule, and total cost
-
+```
 
 Example filled in:
 
+```python
 loan_context = {
     "credit_union": "Driftless Federal Credit Union",
     "loan_type": "auto",
@@ -49,10 +52,11 @@ loan_context = {
 # 3. Any red flags in the fine print?
 # 4. How does this rate compare to what we could offer in-house?
 # 5. Draft a talking-points card for loan officers to walk members through the key terms
+```
 
+## 2. Member Communication Drafts
 
-2. Member Communication Drafts
-
+```text
 Help me write member communications for [Credit Union Name].
 
 Our details:
@@ -100,10 +104,11 @@ Draft the following communications:
    financial literacy events, community sponsorships.
    Format: One-page, visual-friendly, suitable for lobby display or mailing.
    Remind members: every dollar deposited here stays in [community name].
+```
 
+## 3. Financial Health Dashboard
 
-3. Financial Health Dashboard
-
+```python
 # Credit Union Financial Health Monitor
 # Update monthly, paste into Claude for analysis
 
@@ -169,10 +174,11 @@ ncua_peer_benchmarks = {
 # 5. Draft the financial summary section of our board report in plain language
 # 6. Flag any ratios approaching NCUA watch-list thresholds
 # 7. If we grow loans by 10% next quarter, what happens to our liquidity and capital ratios?
+```
 
+## 4. Compliance & Audit Prep
 
-4. Compliance & Audit Prep
-
+```python
 # Credit Union Compliance Tracker
 # Update quarterly, paste into Claude for review
 
@@ -222,10 +228,11 @@ compliance_status = {
 # 6. Review our SAR filing count against peer norms — are we under-reporting?
 # 7. Summarize the top 5 regulatory changes from the past year that affect credit unions under $[X] in assets
 # NOTE: This is an internal planning tool, not legal advice. Consult your examiner and compliance counsel.
+```
 
+## 5. Community Development & Outreach
 
-5. Community Development & Outreach
-
+```text
 Our credit union serves [community/county name] and we want to deepen our impact.
 
 Credit union details:
@@ -285,10 +292,11 @@ Help me with:
    - One-page member-facing impact report (lobby display / annual report insert)
    - Board presentation showing ROI of community programs
    - Press release for local newspaper highlighting key numbers
+```
 
+## 6. Board Reporting & Strategic Planning
 
-6. Board Reporting & Strategic Planning
-
+```python
 # Credit Union Board Packet Generator
 # Update monthly, paste into Claude
 
@@ -390,8 +398,9 @@ peer_comparison = {
 # 6. Identify the 3 most important decisions the board needs to make this quarter
 # 7. Project year-end financials based on current trends — any surprises coming?
 # 8. Draft the annual meeting presentation: 10-minute overview of credit union performance for members
+```
 
-
+```text
 How to Use Any of These
 1. Go to claude.ai
 2. Copy any template above
@@ -403,3 +412,4 @@ How to Use Any of These
 No app to install. No training required. No data leaves your conversation.
 
 Built for credit unions. Built to be shared. Pass it on.
+```

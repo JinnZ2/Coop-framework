@@ -1,6 +1,8 @@
-Farmworker Co-op Plug-ins
-1. Crew Scheduling & Job Dispatch
+# Farmworker Co-op Plug-ins
 
+## 1. Crew Scheduling & Job Dispatch
+
+```python
 # Farmworker Co-op Crew Scheduler
 # Update weekly during season, paste into Claude
 
@@ -75,10 +77,11 @@ crew_schedule = {
 # 5. Draft the weekly crew schedule with assignments, report times, locations, and contact info
 # 6. Track hours by member across all contracts — is work being distributed fairly?
 # 7. Model the revenue impact if we negotiate $1/hour more on the Farm B contract
+```
 
+## 2. Contract Negotiation & Rate Setting
 
-2. Contract Negotiation & Rate Setting
-
+```text
 Help me negotiate fair contracts between our farmworker co-op and growers.
 
 Co-op details:
@@ -126,10 +129,11 @@ Help me with:
    - Contract volume and consistency
    Draft an annual review letter to our best growers acknowledging the partnership.
    Draft a concerns letter to growers where conditions need improvement.
+```
 
+## 3. Payroll & Benefits Administration
 
-3. Payroll & Benefits Administration
-
+```python
 # Farmworker Co-op Payroll Tracker
 # Update weekly, paste into Claude
 
@@ -188,10 +192,11 @@ weekly_payroll = {
 # 6. Draft individual pay stubs for each member (printable, bilingual English/Spanish)
 # 7. Year-end: generate W-2 preparation summary for all members
 # 8. Model what happens to member take-home pay if we raise the co-op margin from 17% to 20%
+```
 
+## 4. Housing & Transportation Coordination
 
-4. Housing & Transportation Coordination
-
+```text
 Help me manage housing and transportation for our farmworker co-op members.
 
 Co-op details:
@@ -233,10 +238,11 @@ Help me with:
    - Workers' comp injury reporting procedures
    - Wildfire/natural disaster evacuation plan for housing sites
    - Template: emergency information card for each member (wallet-sized, bilingual)
+```
 
+## 5. Training & Workforce Development
 
-5. Training & Workforce Development
-
+```python
 # Farmworker Co-op Training Tracker
 # Update quarterly, paste into Claude
 
@@ -298,10 +304,11 @@ training_program = {
 # 6. 17 members need harassment prevention training — schedule it and draft the attendance requirement notice
 # 7. Create a skills matrix showing what each member is certified for — helps with crew assignment
 # 8. Grant opportunity: workforce development funds for agricultural training — draft the application narrative
+```
 
+## 6. Member Rights & Cooperative Governance
 
-6. Member Rights & Cooperative Governance
-
+```text
 Help me build a strong democratic governance structure for our farmworker co-op.
 
 Co-op details:
@@ -364,7 +371,6 @@ Help me with:
    - When to involve outside support: legal aid, co-op development organizations
    - Emphasis: resolve disputes without anyone feeling silenced or punished
 
-
 How to Use Any of These
 1. Go to claude.ai
 2. Copy any template above
@@ -376,3 +382,4 @@ How to Use Any of These
 No app to install. No training required. No data leaves your conversation.
 
 Built for farmworker co-ops. By the workers, for the workers. Pass it on.
+```

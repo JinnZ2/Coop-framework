@@ -1,6 +1,8 @@
-Childcare Co-op Plug-ins
-1. Enrollment & Waitlist Management
+# Childcare Co-op Plug-ins
 
+## 1. Enrollment & Waitlist Management
+
+```python
 # Childcare Co-op Enrollment Dashboard
 # Update monthly, paste into Claude
 
@@ -80,10 +82,11 @@ enrollment = {
 # 5. Staff ratios: are we one sick call away from being out of compliance in any room?
 # 6. Project enrollment and revenue for the next 12 months accounting for age-ups and graduations
 # 7. Draft waitlist offer letters with enrollment packets and deadline to accept
+```
 
+## 2. Parent Scheduling & Volunteer Coordination
 
-2. Parent Scheduling & Volunteer Coordination
-
+```text
 Help me coordinate parent participation in our childcare co-op.
 
 Co-op details:
@@ -131,10 +134,11 @@ Help me with:
    - Emergency procedures
    - How to raise concerns (who to talk to, grievance process)
    - Why we're a co-op, not just a daycare — the philosophy matters
+```
 
+## 3. Budget & Tuition Modeling
 
-3. Budget & Tuition Modeling
-
+```python
 # Childcare Co-op Financial Model
 # Update monthly, paste into Claude
 
@@ -195,10 +199,11 @@ staff_compensation = {
 # 6. Draft the annual budget for board approval with line-item justifications
 # 7. What grants are available for childcare co-ops in [state]? USDA CACFP, state quality grants, local foundations?
 # 8. Model adding a before/after school program: revenue potential, staffing needs, licensing requirements
+```
 
+## 4. Licensing & Health/Safety Compliance
 
-4. Licensing & Health/Safety Compliance
-
+```python
 # Childcare Licensing Tracker
 # Update quarterly, paste into Claude
 
@@ -267,10 +272,11 @@ licensing = {
 # 7. Are we meeting CACFP meal pattern requirements? Review our sample weekly menu
 # 8. Draft emergency procedures manual: fire, tornado, lockdown, medical emergency, missing child
 # NOTE: Always verify requirements with your state licensing agency. Regulations vary by state.
+```
 
+## 5. Staff Retention & Professional Development
 
-5. Staff Retention & Professional Development
-
+```text
 Help me keep our childcare co-op staff from leaving for better-paying jobs.
 
 Our situation:
@@ -319,10 +325,11 @@ Help me with:
    - List where to post: ECE programs, community boards, workforce agencies
    - Interview questions that assess fit with cooperative values
    - Onboarding checklist for new staff: licensing paperwork, training schedule, mentor assignment
+```
 
+## 6. Fundraising & Community Support
 
-6. Fundraising & Community Support
-
+```text
 Help me raise money and build community support for our childcare co-op.
 
 Co-op details:
@@ -369,7 +376,6 @@ Help me with:
      - Joint recruitment for staff positions
    - Model the ROI for the employer: reduced absenteeism, improved retention
 
-
 How to Use Any of These
 1. Go to claude.ai
 2. Copy any template above
@@ -381,3 +387,4 @@ How to Use Any of These
 No app to install. No training required. No data leaves your conversation.
 
 Built for childcare co-ops. Because the people who raise our kids deserve better tools. Pass it on.
+```

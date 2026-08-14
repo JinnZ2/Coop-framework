@@ -1,6 +1,8 @@
-Housing Co-op Plug-ins
-1. Maintenance Request Triage
+# Housing Co-op Plug-ins
 
+## 1. Maintenance Request Triage
+
+```python
 # Housing Co-op Maintenance Tracker
 # Update weekly, paste into Claude for analysis
 
@@ -40,10 +42,11 @@ completed_last_90_days = [
 # 4. At current spend rate, will we stay within annual budget?
 # 5. Draft a maintenance update email to all members — status of open requests, no unit names
 # 6. Which requests need board approval based on cost threshold of $[amount]?
+```
 
+## 2. Lease & Bylaw Plain-Language Summarizer
 
-2. Lease & Bylaw Plain-Language Summarizer
-
+```text
 I'm on the board of a housing co-op. I'm going to paste our
 [occupancy agreement / bylaws / house rules / proprietary lease] below.
 
@@ -80,10 +83,11 @@ Please:
 
 Document text:
 [Paste your occupancy agreement, bylaws, or house rules here]
+```
 
+## 3. Board Communication & Meeting Prep
 
-3. Board Communication & Meeting Prep
-
+```python
 # Housing Co-op Board Communication Hub
 # Use any section independently — paste into Claude with your info
 
@@ -157,10 +161,11 @@ upcoming_meeting = {
 # 3. Annual meeting announcement:
 #    Include: date, time, location, agenda preview, board election info,
 #    proxy voting instructions, RSVP request, childcare availability
+```
 
+## 4. Financial Management
 
-4. Financial Management
-
+```python
 # Housing Co-op Financial Dashboard
 # Update monthly, paste into Claude for analysis
 
@@ -212,10 +217,11 @@ monthly_financials = {
 # 5. Draft a delinquency notice for unit 3A — firm but respectful, include payment plan option
 # 6. Build a 5-year capital improvement timeline matched against projected reserve fund balance
 # 7. Draft a one-page financial summary for the annual meeting — plain language, no accounting jargon
+```
 
+## 5. New Member Onboarding
 
-5. New Member Onboarding
-
+```text
 A new member is moving into Unit [number] on [date].
 
 Our co-op details:
@@ -269,10 +275,11 @@ Generate a complete onboarding package:
    - Non-emergency police
    - Building super / handyperson
    - Recycling and bulk trash schedule
+```
 
+## 6. Conflict Resolution & Governance
 
-6. Conflict Resolution & Governance
-
+```text
 Our housing co-op needs help with member conflicts and governance.
 
 Co-op details:
@@ -332,5 +339,5 @@ Help with the following:
    - How to handle complaints against board members themselves
    - Term limits and succession planning
 
-
 Built for housing co-ops. Built to be shared. Pass it on.
+```

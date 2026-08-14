@@ -1,6 +1,8 @@
-Tribal Enterprise Co-op Plug-ins
-1. Sovereignty-Aligned Business Planning
+# Tribal Enterprise Co-op Plug-ins
 
+## 1. Sovereignty-Aligned Business Planning
+
+```text
 Help me develop a business plan for our tribal enterprise that respects our governance structure.
 
 Tribal enterprise details:
@@ -48,10 +50,11 @@ Help me with:
    - Quarterly tribal council report: community impact focus — jobs created, revenue transferred to general fund, local purchasing, youth programs
    - Annual community report: plain-language summary for tribal members
    - Template for joint sessions when enterprise decisions need council approval
+```
 
+## 2. Federal Grant & Contract Navigation
 
-2. Federal Grant & Contract Navigation
-
+```python
 # Tribal Enterprise Grant & Contract Tracker
 # Update as needed, paste into Claude
 
@@ -110,10 +113,11 @@ grant_portfolio = {
 # 7. Create a "Buy Indian Act" compliance checklist for federal procurement officers
 # 8. Draft a tribal council resolution template authorizing grant applications
 # NOTE: Consult your tribal attorney for legal review of all grant applications and contracts.
+```
 
+## 3. Community Impact & Benefit Tracking
 
-3. Community Impact & Benefit Tracking
-
+```python
 # Tribal Enterprise Community Benefit Dashboard
 # Update quarterly, paste into Claude
 
@@ -174,10 +178,11 @@ community_impact = {
 # 6. Compare our community contribution to peer tribal enterprises — are we doing enough?
 # 7. Which workforce development programs have the best ROI? Rank by cost per outcome
 # 8. Draft an annual report for tribal members: plain language, visual-friendly, culturally appropriate
+```
 
+## 4. Cultural Tourism & Land-Based Enterprise
 
-4. Cultural Tourism & Land-Based Enterprise
-
+```text
 Help me develop [cultural tourism / land-based enterprise] programs that generate revenue while protecting cultural integrity.
 
 Enterprise details:
@@ -226,10 +231,11 @@ Help me with:
    - Economic impact projections
    - Sustainability plan after grant period
    - Letters of support checklist (tribal council, state tourism, partner organizations)
+```
 
+## 5. Infrastructure & Broadband Development
 
-5. Infrastructure & Broadband Development
-
+```python
 # Tribal Infrastructure Project Tracker
 # Paste into Claude for planning and reporting
 
@@ -286,10 +292,11 @@ infrastructure_projects = {
 # 7. Create a construction timeline that accounts for seasonal weather, cultural site avoidance, and NEPA review
 # 8. Draft a resolution for tribal council authorizing the broadband project and related land easements
 # NOTE: All projects on trust land require BIA approval and environmental review. Consult your tribal attorney.
+```
 
+## 6. Inter-Tribal & Co-op Network Partnerships
 
-6. Inter-Tribal & Co-op Network Partnerships
-
+```text
 Help me build partnerships between our tribal enterprise and regional co-operative networks.
 
 Our situation:
@@ -338,7 +345,6 @@ Help me with:
    - Draft partner commitment letters for [specific grant opportunity]
    - Build a shared outcomes framework both organizations can report on
 
-
 How to Use Any of These
 1. Go to claude.ai
 2. Copy any template above
@@ -350,3 +356,4 @@ How to Use Any of These
 No app to install. No training required. No data leaves your conversation.
 
 Built for tribal enterprises. Sovereignty-first. Built to be shared within and between nations.
+```

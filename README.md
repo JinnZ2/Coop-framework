@@ -44,7 +44,7 @@ No app to install. No coding. No training required. See [GETTING_STARTED.md](GET
 6 templates for enrollment management, curriculum documentation, budget modeling, licensing compliance, community integration, and staff retention.
 
 ### Auto Repair Shops — [auto-repair-shop-plugin.md](auto-repair-shop-plugin.md)
-Templates for job tracking, estimates, parts management, and customer communication.
+6 templates for job tracking & estimates, vendor & parts management, customer communication, shop financials & labor rate, preventive maintenance, and diagnostic knowledge capture.
 
 ### Rural Electric Co-ops — [rural-electric-coop-plugin.md](rural-electric-coop-plugin.md)
 6 templates for outage management, load forecasting, vegetation management, capital credits, rate design, and renewable energy/distributed generation.

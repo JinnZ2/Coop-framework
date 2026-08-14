@@ -54,7 +54,11 @@ Every copy-paste Claude template in this repository, organized by industry. Clic
 | # | Template | What It Does |
 |---|---|---|
 | 1 | Job Tracking & Estimates | Generates customer estimates, prioritizes by parts availability, drafts updates |
-| 2 | Vendor & Parts Management | Tracks supplier pricing, manages core returns, optimizes ordering |
+| 2 | Vendor & Parts Management | Compares supplier pricing and cutoffs, tracks outstanding cores, plans stocking |
+| 3 | Customer Communication | Approval call scripts, bad-news estimates, delay notices, declined-work follow-up |
+| 4 | Shop Financials & Labor Rate | Break-even hours, effective labor rate, parts margin, rate increase modeling |
+| 5 | Preventive Maintenance & Customer Retention | Flags who's due by estimated mileage, drafts reminders, win-back messages |
+| 6 | Diagnostic Notes & Shop Knowledge | Turns hard jobs into a searchable reference and new-tech checklists |
 
 ## Credit Unions — [credit-union-plugin.md](credit-union-plugin.md)
 
@@ -146,6 +150,6 @@ Every copy-paste Claude template in this repository, organized by industry. Clic
 
 ---
 
-**Total: 80+ ready-to-use templates across 13 industries.**
+**Total: 81 ready-to-use templates across 13 industries.**
 
 Don't see your industry? Follow the pattern of any existing plugin file and create your own. Then share it.

@@ -1,6 +1,8 @@
-Grain Elevator Co-op Plug-ins
-1. Harvest Intake Tracker
+# Grain Elevator Co-op Plug-ins
 
+## 1. Harvest Intake Tracker
+
+```python
 # Grain Elevator Harvest Dashboard
 # Update daily during harvest, paste into Claude
 
@@ -50,10 +52,11 @@ current_prices = {
 # 4. Draft a text/radio message to members about wait times and rain forecast
 # 5. If rain hits Thursday, model the moisture spike and drying cost increase
 # 6. Current basis vs 3-year average — should we advise members to store or sell?
+```
 
+## 2. Basis & Pricing Advisor
 
-2. Basis & Pricing Advisor
-
+```python
 # Grain Marketing Decision Support
 # NOT financial advice — information tool for co-op board discussion
 
@@ -91,7 +94,6 @@ storage_costs = {
 # 5. Flag any unusual basis movements that might signal local supply/demand shifts
 # NOTE: This is informational only. Not financial advice. Members make their own decisions.
 
-
 # Grain Marketing Decision Support
 # NOT financial advice — information tool for co-op board discussion
 
@@ -128,9 +130,11 @@ storage_costs = {
 # 4. Draft talking points for our grain merchandiser to share with members at the counter
 # 5. Flag any unusual basis movements that might signal local supply/demand shifts
 # NOTE: This is informational only. Not financial advice. Members make their own decisions.
+```
 
-3. Transportation & Logistics Coordinator
+## 3. Transportation & Logistics Coordinator
 
+```python
 # Grain Shipping Planner
 
 shipments = {
@@ -166,10 +170,11 @@ shipments = {
 # 4. Model fuel surcharge impact if diesel goes up $0.50/gallon
 # 5. Draft carrier confirmation emails with loading schedule and requirements
 # 6. Contingency plan if rail loading window gets pushed back 5 days
+```
 
+## 4. Compliance & Reporting
 
-4. Compliance & Reporting
-
+```text
 Our grain elevator co-op needs help with regulatory compliance.
 
 Facility details:
@@ -185,10 +190,11 @@ Help me with:
 4. Create a bin entry safety protocol document (printable, post at every bin)
 5. Organize our scale ticket records for auditor review
 6. Draft our fumigation log template that meets [state] ag department requirements
+```
 
+## 5. Farmer Communication Hub
 
-5. Farmer Communication Hub
-
+```text
 Draft communications for our grain elevator members:
 
 Current situation:
@@ -204,3 +210,4 @@ Generate:
 4. Annual meeting presentation outline showing co-op performance, patronage dividend estimate, and capital improvement plans
 
 Tone: Straightforward. These are farmers. No fluff. Numbers and facts.
+```

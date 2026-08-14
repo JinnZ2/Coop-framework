@@ -1,6 +1,8 @@
-Worker-Owned Co-op Plug-ins
-1. New Worker-Owner Onboarding
+# Worker-Owned Co-op Plug-ins
 
+## 1. New Worker-Owner Onboarding
+
+```python
 # Worker-Owner Onboarding Tracker
 # Update when new members join, paste into Claude
 
@@ -53,10 +55,11 @@ current_owners = {
 # 4. Create a mentorship meeting template with suggested topics for weeks 1, 4, 8, 12
 # 5. How many paychecks until equity is fully paid? What's the balance at probation end date?
 # 6. Draft a welcome letter from the co-op that explains what makes this different from a regular job
+```
 
+## 2. Democratic Decision-Making Templates
 
-2. Democratic Decision-Making Templates
-
+```python
 # Co-op Governance Tracker
 # Use before and during member meetings
 
@@ -111,10 +114,11 @@ meeting_log = {
 # 4. After the meeting: clean up raw notes into formal minutes with motions, votes, and action items
 # 5. Create a proposal template we can reuse — simple enough that anyone feels comfortable submitting one
 # 6. We've had the same 3 people dominating meetings. Suggest facilitation techniques to balance participation
+```
 
+## 3. Profit-Sharing & Patronage Calculator
 
-3. Profit-Sharing & Patronage Calculator
-
+```python
 # Worker-Owner Profit Sharing & Patronage Dividends
 # NOT tax or legal advice — use this for modeling and board discussion
 # Consult your co-op's accountant before finalizing distributions
@@ -153,10 +157,11 @@ worker_owners = [
 # 6. Summarize tax basics: patronage dividends are taxable income for members, co-op deducts them — draft a reminder notice
 # 7. Project each member's equity account balance in 3 years at current surplus levels
 # NOTE: This is a planning tool. Your accountant handles the real numbers and tax filings.
+```
 
+## 4. Operations & Scheduling
 
-4. Operations & Scheduling
-
+```python
 # Worker-Owner Shift Planner
 # Balances operational needs with equity — everyone shares the good and bad shifts
 
@@ -200,10 +205,11 @@ skills_matrix = {
 # 5. Member C wants to increase to 40 hours. Model the schedule impact
 # 6. Draft a fair rotation system for weekend and closing shifts — put it in writing so it's transparent
 # 7. We want to hire a new member. Based on skills gaps, what should we prioritize in the job posting?
+```
 
+## 5. Business Development & Growth
 
-5. Business Development & Growth
-
+```python
 # Worker-Owned Co-op Growth Planner
 # Use for strategic planning sessions and board discussions
 
@@ -258,10 +264,11 @@ recruitment = {
 # 5. Write a recruitment posting that explains what worker-ownership means — attract people who want to own their work
 # 6. Compare funding sources: cooperative lender vs credit union vs member equity — total cost of each over 5 years
 # 7. What's our risk if the expansion underperforms by 25%? Can we absorb the loss without cutting current member pay?
+```
 
+## 6. Financial Transparency & Reporting
 
-6. Financial Transparency & Reporting
-
+```python
 # Open-Book Management Dashboard
 # Worker-owners deserve to see the numbers. This helps make them understandable.
 # Update monthly, paste into Claude
@@ -333,6 +340,6 @@ year_to_date = {
 # 6. Draft the financial update talking points for our next all-hands meeting — honest, clear, no sugarcoating
 # 7. Our reserve fund target is 3 months of expenses. How far away are we and when do we hit it at current savings rate?
 # 8. Model next quarter's cash flow: are there any months where we might be tight?
-
+```
 
 Built for worker-owners. Built to be shared. Pass it on.

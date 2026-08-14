@@ -18,7 +18,7 @@ This is a **documentation and template repository**, not a traditional software 
 ├── practical-plugins.md           # 11 copy-paste Claude templates for food/grain/electric co-ops
 ├── Montessori-plugin.md           # 6 Claude templates for Montessori schools
 ├── grain-elevator-coop.md         # 5 Claude templates for grain elevator operations
-├── auto-repair-shop-plugin.md     # Claude templates for auto repair shop operations
+├── auto-repair-shop-plugin.md     # 6 Claude templates for auto repair shop operations
 ├── credit-union-plugin.md         # 6 Claude templates for credit union operations
 ├── housing-coop-plugin.md         # 6 Claude templates for housing co-op operations
 ├── rural-electric-coop-plugin.md   # 6 Claude templates for rural electric co-op operations
@@ -41,6 +41,26 @@ All files live at the root level. No subdirectories.
 - Templates use `[brackets]` to indicate user-customizable sections
 - Grouped by industry/use case (agriculture, education, general co-op operations)
 - Designed to be copy-pasted directly into Claude.ai by non-technical users
+
+#### Plugin file formatting
+
+Every plugin file follows the same structure so it renders correctly on GitHub
+and gives users a working copy button on each template:
+
+- `# File Title` — one H1 at the top (e.g. `# Credit Union Co-op Plug-ins`)
+- `## N. Template Name` — one H2 per template, numbered from 1
+- Every copy-paste block is **fenced**: ` ```python ` for the structured data
+  templates, ` ```text ` for prose prompts
+
+Fencing is not cosmetic. Unfenced blocks render as giant headings and collapsed
+paragraphs, and the whole premise of this repo is that a template can be copied
+straight into Claude.ai. If you add a template, fence it.
+
+`practical-plugins.md` is the one exception to full fencing — it also contains
+example *outputs* (tables, bold, rules) that are meant to render as markdown, so
+only its template blocks are fenced. It uses `###` for templates under two `##`
+dividers (`General Co-op Plug-ins`, `Electrical Co-op Plug-ins`); the second is
+the anchor target for `practical-plugins.md#electrical-co-op-plug-ins`.
 
 ### Python Files (`.py`)
 - **Educational pseudo-code**, not production-runnable code

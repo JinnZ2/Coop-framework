@@ -1,6 +1,8 @@
-Montessori School Co-op Plug-ins
-1. Enrollment & Waitlist Manager
+# Montessori School Co-op Plug-ins
 
+## 1. Enrollment & Waitlist Manager
+
+```python
 # Montessori School Enrollment Tracker
 
 classrooms = {
@@ -55,10 +57,11 @@ classrooms = {
 # 4. Calculate monthly revenue per classroom and total
 # 5. Are we in compliance with staff ratios if one teacher calls in sick per room?
 # 6. Draft waitlist status update letters — warm, personal, Montessori-aligned tone
+```
 
+## 2. Curriculum Documentation & Parent Communication
 
-2. Curriculum Documentation & Parent Communication
-
+```text
 I'm a Montessori guide in a [age level] classroom. 
 
 Help me with:
@@ -91,10 +94,11 @@ Help me with:
    "Understanding the three-year cycle," "Montessori at home,"
    "The role of practical life," "Why your child 'just plays' 
    (and why that's everything)"
+```
 
+## 3. Budget & Tuition Modeler
 
-3. Budget & Tuition Modeler
-
+```python
 # Montessori School Financial Planner
 
 revenue = {
@@ -135,11 +139,11 @@ expenses_monthly = {
 # 5. Draft a transparent budget summary for our parent board meeting
 # 6. Compare our tuition to regional Montessori schools — are we priced right?
 # 7. If we lose 3 families over summer, which classroom hits crisis first?
+```
 
+## 4. Licensing & Compliance Tracker
 
-4. Licensing & Compliance Tracker
-
-
+```text
 Our Montessori school is in [state]. Help me stay on top of licensing.
 
 Current status:
@@ -162,10 +166,11 @@ Generate:
 6. Draft parent handbook section on our licensing, ratios, and safety policies
 
 Make everything printable and inspector-ready.
+```
 
+## 5. Community Integration & Outreach
 
-5. Community Integration & Outreach
-
+```text
 Our Montessori school is part of a co-op network that includes 
 [food co-op name], [electric co-op name], and local farms.
 
@@ -199,10 +204,11 @@ Help us strengthen those connections:
    - Farm apprenticeship days for elementary children
    - Community garden project
    - Keep it affordable — co-op member rates
+```
 
+## 6. Staff Retention & Development
 
-6. Staff Retention & Development
-
+```text
 Montessori teacher retention is a crisis nationwide. Help our school 
 build a plan to keep our guides.
 
@@ -225,7 +231,6 @@ Generate:
 4. Annual satisfaction survey for current staff
 5. Draft a "why teach here" recruitment posting that's honest and compelling
 6. 3-year staffing stability plan with budget implications
-
 
 Connecting the Three: Cross-Co-op Integration
 
@@ -254,6 +259,6 @@ Ask Claude:
 5. Model economic impact: $1 spent at the food co-op — how much 
    stays in the local economy through this network?
 
-
 Three co-ops. One ecosystem. Every connection makes the whole thing stronger.
 Pass it on.
+```

@@ -1,6 +1,8 @@
-Fishing Co-op Plug-ins
-1. Catch Tracking & Quota Management
+# Fishing Co-op Plug-ins
 
+## 1. Catch Tracking & Quota Management
+
+```python
 # Fishing Co-op Catch Dashboard
 # Update daily during season, paste into Claude
 
@@ -68,10 +70,11 @@ daily_catch = {
 # 5. Revenue per vessel today vs season average — who's outperforming and what are they doing differently?
 # 6. Draft a fleet advisory: quota status, processing capacity, any changes to delivery schedule
 # 7. Model the revenue impact if we shift 10% of catch from standard to premium grade through better handling
+```
 
+## 2. Direct-to-Consumer & Market Sales
 
-2. Direct-to-Consumer & Market Sales
-
+```python
 # Fish Market & Sales Tracker
 # Update weekly, paste into Claude
 
@@ -136,10 +139,11 @@ sales_channels = {
 # 5. Restaurant accounts: which ones are growing, which are declining? Draft a re-engagement pitch
 # 6. Build a pricing strategy for our value-added products — are we leaving money on the table?
 # 7. Create a 12-month sales forecast by channel with seasonal adjustments
+```
 
+## 3. Cold Chain & Processing Logistics
 
-3. Cold Chain & Processing Logistics
-
+```python
 # Cold Chain Management
 # Update daily during peak season, paste into Claude
 
@@ -198,10 +202,11 @@ cold_chain = {
 # 5. Build a daily processing schedule: what gets filleted, what gets frozen whole, what ships fresh
 # 6. Calculate our yield rates — are we losing product in processing? Compare to industry benchmarks
 # 7. Draft a HACCP monitoring log template for our processing line
+```
 
+## 4. Vessel Maintenance & Fleet Coordination
 
-4. Vessel Maintenance & Fleet Coordination
-
+```text
 Help me manage our fishing co-op fleet operations.
 
 Co-op details:
@@ -261,10 +266,11 @@ Help me with:
    - Weather window decision framework: when to go, when to stay in
    - Communication protocol: VHF channels, satellite check-in schedule
    - End-of-season haul-out and winterization timeline
+```
 
+## 5. Regulatory Compliance & Sustainability
 
-5. Regulatory Compliance & Sustainability
-
+```python
 # Fishing Co-op Regulatory Tracker
 # Update as needed, paste into Claude
 
@@ -322,10 +328,11 @@ regulatory_status = {
 # 7. Summarize any regulatory changes from the last council meeting that affect our fishery
 # 8. Create a permit transfer/lease tracking system for the co-op
 # NOTE: Consult your fisheries attorney and state agency for legal compliance questions.
+```
 
+## 6. Member Settlement & Revenue Distribution
 
-6. Member Settlement & Revenue Distribution
-
+```python
 # Fishing Co-op Settlement Calculator
 # Run at end of delivery period, paste into Claude
 
@@ -385,8 +392,9 @@ settlement_data = {
 # 6. Model what happens to settlements if we cut processing costs by 10% vs if we get 10% better prices
 # 7. Draft the settlement letter to members explaining how payments were calculated
 # 8. Reserve fund contribution at $35K — is that enough for off-season expenses and equipment replacement?
+```
 
-
+```text
 How to Use Any of These
 1. Go to claude.ai
 2. Copy any template above
@@ -398,3 +406,4 @@ How to Use Any of These
 No app to install. No training required. No data leaves your conversation.
 
 Built for fishing co-ops. From the dock to the market. Pass it on.
+```

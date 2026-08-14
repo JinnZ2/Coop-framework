@@ -27,7 +27,16 @@ Co-ops already run on trust, shared ownership, and word-of-mouth. This framework
 3. Copy the template, replace the `[brackets]` with your real information
 4. Hit enter — Claude gives you a ready-to-use result
 
-No app to install. No coding. No training required. See [GETTING_STARTED.md](GETTING_STARTED.md) for a detailed walkthrough.
+No app to install. No coding. No training required.
+
+**Once it's working, two things make it much less tedious:**
+
+- **Put the template in a Project.** A Project's knowledge base holds your template and your standing details — co-op name, member count, vendor list — so every chat inside it already knows them. Your monthly vendor order becomes one sentence instead of a wall of pasted text.
+- **Upload your files instead of retyping them.** The templates show data written out so the example is clear, but if it already lives in a spreadsheet or an exported report, just attach the file. Claude can hand finished files back, too — ask for the board packet as a document or the reserve study as a spreadsheet.
+
+**Before you paste anything sensitive,** check your model improvement setting in Claude's privacy settings — it controls whether your conversations are used to train future models, and it's yours to set.
+
+See [GETTING_STARTED.md](GETTING_STARTED.md) for the full walkthrough, including all three of the above.
 
 ## Templates by Industry
 
